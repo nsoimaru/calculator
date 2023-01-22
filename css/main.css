@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Roboto+Mono&display=swap');
 
 html {
     font-family: "Roboto Mono", monospace;
@@ -22,4 +22,114 @@ html {
 .container {
     width: 90vw;
     max-width: 500px;
+    background-color: rgb(180, 182, 184);
+    display: grid;
+    gap: 1px;
+    grid-template-areas: 
+        "header header header header"
+        "display display display display";
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
+}
+
+.container:focus-within {
+    background-color: rgba(225, 225, 225, 0.4);
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    /* margin: 1px auto; */
+    padding: 0.25rem 0.5rem;
+}
+
+.header > h1 {
+    font-family: "IBM";
+    font-size: small;
+    font-weight: normal;
+}
+
+.display {
+    grid-area: display;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.1rem 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.previous__value {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.current__value {
+    font-size: 3rem;
+   
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-family: "Roboto Mono", monospace;
+}
+
+button {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.8rem;
+    border: none;
+    background-color: whitesmoke;
+}
+
+button:hover,
+button:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.function {
+    background-color: rgb(235, 235, 235);
+}
+
+.equals {
+    background-color: rgb(154, 210, 234);
+}
+
+.equals:hover,
+.equals:active {
+    background-color: rgba(154, 210, 234, 0.7);
+    filter: brightness(120%);
+}
+
+.clear__entry,
+.clear,
+.delete {
+    background-color: rgb(214, 198, 198);
+}
+
+.clear__entry:active,
+.clear__entry:hover,
+.clear:active,
+.clear:hover,
+.delete:active,
+.delete:hover {
+    background-color: rgba(214, 198, 198, 0.7);
+    filter: brightness(120%);
+}
+
+.transparency {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 22px;
+    }
+    .container {
+        grid-template-rows: 35px minmax(95px, auto) repeat(5, minmax(0, 95px));
+    }
 }
