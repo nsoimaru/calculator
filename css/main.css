@@ -1,1 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+html {
+    font-family: "Roboto Mono", monospace;
+    color: black;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    background-image: linear-gradient(to right top, 
+    #1756b5, 
+    #4e72c5, 
+    #758fd4, 
+    #9aade3, 
+    #beccf2);
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    width: 90vw;
+    max-width: 500px;
+}
