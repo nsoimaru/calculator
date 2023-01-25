@@ -64,6 +64,7 @@ class Calculator {
                 computation = prev * current;
                 break;
             case '/':
+                if(current === 0) return;
                 computation = prev / current;
                 break;
             default:
